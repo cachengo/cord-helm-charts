@@ -24,10 +24,10 @@ needDBPersistence: false
 
 # Docker images
 # YAML variable names can't contain `-`, so substituted with `_`
-xos_coreImage: 'xosproject/xos-core:{{ .Chart.Version }}'
-xos_chameleonImage: 'xosproject/chameleon:{{ .Chart.Version }}'
-xos_toscaImage: 'xosproject/xos-tosca:1.0.1'
-xos_api_testerImage: 'xosproject/xos-api-tester:2.0.1'
+xos_coreImage: 'cachengo/xos-core:{{ .Chart.Version }}'
+xos_chameleonImage: 'cachengo/chameleon:{{ .Chart.Version }}'
+xos_toscaImage: 'cachengo/xos-tosca:1.0.1'
+xos_api_testerImage: 'cachengo/xos-api-tester:2.0.1'
 
 postgresImage: 'postgres:10.3-alpine'
 nodeImage: 'node:7.9.0'

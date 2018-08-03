@@ -16,8 +16,8 @@
 imagePullPolicy: 'Always'
 
 # Docker Images
-xos_guiImage: 'xosproject/xos-gui:{{ .Chart.Version }}'
-xos_wsImage: 'xosproject/xos-ws:1.0.0'
+xos_guiImage: 'cachengo/xos-gui:{{ .Chart.Version }}'
+xos_wsImage: 'cachengo/xos-ws:1.0.0'
 
 # NodePorts
 xos_guiNodePort: 30001
