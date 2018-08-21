@@ -40,6 +40,7 @@ spec:
         - name: {{ .Chart.Name }}
           image: {{ tpl .Values.synchronizerImage . | quote }}
           imagePullPolicy: {{ .Values.imagePullPolicy }}
+          command: ["tailf", "/dev/null"]
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           volumeMounts:
@@ -55,6 +56,8 @@ spec:
             - name: node-key
               mountPath: /opt/cord_profile
               readOnly: true
+            - name: xosadmin-pw
+              mountPath: /opt/xos/services/hssdb/credentials
       volumes:
         - name: hssdb-config
           configMap:
@@ -77,6 +80,10 @@ spec:
             secretName: node-key
             defaultMode: 256
             optional: true
+        - name: xosadmin-pw
+          secret:
+            secretName: xosadmin-pw
+            defaultMode: 256
     {{- with .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}
