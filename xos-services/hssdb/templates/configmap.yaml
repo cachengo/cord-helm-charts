@@ -21,3 +21,4 @@ metadata:
 data:
   serviceConfig: |
 {{ include "hssdb.serviceConfig" . | indent 4 }}
+  hssdbConfig: {{ .Files.Get "files/hssdb_config").AsConfig | indent 2 }}

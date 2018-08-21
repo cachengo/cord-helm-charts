@@ -65,6 +65,8 @@ spec:
             items:
               - key: serviceConfig
                 path: mounted_config.yaml
+              - key: hssdbConfig
+                path: hssdb_config.yaml
         - name: certchain-volume
           configMap:
             name: ca-certificates
